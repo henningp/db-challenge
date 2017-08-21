@@ -15,7 +15,7 @@ Implementation notes:
 1. In a real system with some kind of persistent storage, we would most likely use transactions 
 and/or optimistic locking and/or retries at the service level to avoid race conditions and make 
 the transfer atomic. In this non-persistent, non-distributed toy application, we can get away 
-with `synchronized to solve the question of race conditions. As adding money to an account 
+with `synchronized` to solve the question of race conditions. As adding money to an account 
 cannot fail, we also never have to lock two objects at the same time, hence there cannot be 
 deadlocks which we then also don’t have to deal with (profit!).
 2. I would tend to write controller and service tests as unit tests rather than integration 
